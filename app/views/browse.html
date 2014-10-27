@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Browse tons of cool things!</h2>
+    <p class="lead">So you think you're ready to browse the API? Search away!</p>
+
+    <div class="search">
+        <input type="text" ng-model="filter.query" placeholder="API endpoint"/>
+    </div>
+    <div class="results">
+        <ul>
+            <li ng-repeat="endpoint in endpoints | filter:filter.query | orderBy:endpoint.name">
+                <a href="{{ endpoint.url }}">{{endpoint.name}}</a> -
+                {{ endpoint.description }}
+            </li>
+        </ul>
+    </div>
+
+</div>
