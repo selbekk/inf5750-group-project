@@ -1,4 +1,12 @@
-node_modules
-dist
-.tmp
-bower_components
+# Ignore npm and bower dependencies
+node_modules/
+bower_components/
+
+# Ignore distribution folder
+dist/
+
+# Ignore OS-specific files
+.DS_Store
+
+# Ignore temporary grunt folder
+.tmp/
