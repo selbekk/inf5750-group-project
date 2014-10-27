@@ -1,0 +1,14 @@
+{
+    "name": "Web API HTML-view browser",
+    "description": "A great way to discover the DHIS APIs",
+    "launch_path": "/index.html",
+    "icons": {
+        "512": "/images/icons/app-icon-512x512.png",
+        "128": "/images/icons/app-icon-128x128.png"
+    },
+    "developer": {
+        "name": "The ANNK group, INF5750",
+        "url": "http://www.dhis.org"
+    },
+    "default_locale": "en"
+}
