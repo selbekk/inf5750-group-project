@@ -1,0 +1,7 @@
+{
+  "name": "inf5750-group-assignment",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
