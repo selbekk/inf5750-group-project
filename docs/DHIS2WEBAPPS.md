@@ -5,7 +5,11 @@ The purpose of packaged apps is to extend the web interface of DHIS 2. A system 
 
 The Web API is a component which makes it possible for external systems to access and manipulate data stored in an instance of DHIS 2. More precisely, it provides a programmatic interface to a wide range of exposed data and service methods for applications such as third-party software clients, web portals and internal DHIS 2 modules.
 
-Below is DHIS 2 technical architecture as documented in (https://www.dhis2.org/doc/snapshot/en/developer/dhis2_developer_manual.pdf). 
+Below is DHIS 2 technical architecture as documented in developer manual.  
 DHIS 2 web-app is part of presentation layer which communicates to service layer through Web API. 
 ![DHIS2 architecture](dhis2-arch.jpg)
+
+References: 
+DHIS user manual (https://www.dhis2.org/doc/snapshot/en/end-user/html/dhis2_end_user_manual.html)
+DHIS developer manual (https://www.dhis2.org/doc/snapshot/en/developer/dhis2_developer_manual.pdf)
 
