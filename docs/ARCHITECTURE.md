@@ -18,7 +18,6 @@ some tools for dependency management (Bower), running build tasks (Grunt) and
 scaffolding out our application (Yeoman). Very IT-hipster.
 
 #### Bower
-
 [Bower](http://bower.io/) is a dependency manager for frontend dependencies. It
 simplifies dealing with dependencies, with a central dependency file and
 automatic downloads. All dependencies are kept in the file ``bower.json``, where
@@ -26,21 +25,53 @@ you can update, delete or add new dependencies with a simple command.
 
 We use Bower because maintaining a web app without a dependency manager is a
 huge pain in the rear. Also, whenever we need to depend on a new library - like
-``underscore``, we can simply run ``bower install underscore --save``. 
+``underscore``, we can simply run ``bower install underscore --save``.
+
+Bower is in many ways the javascript version of the dependency management part of
+Maven or Gradle.
 
 #### Grunt
+[Grunt](http://gruntjs.com/) is a task runner for web apps, which is used to
+build the project. It's used to minify and concatenate js and css files, as well
+as injecting Bower dependencies into the html.
+
+We use Grunt as a build and watch tool, as well as a development server. It
+really boosts productivity and ease of development.
+
+Grunt is in many ways the javascript version of the plugin and build modules in
+Maven or Gradle.
 
 #### Yeoman
+[Yeoman](http://yeoman.io/) is a scaffolding tool for web applications. Given a
+generator, Yeoman will set up all the boiler plate code for a modern web app in
+a matter of seconds. This saves us valuable time in the startup of a project.
+
+Yeoman is in many ways the javascript version of Maven archetypes.
 
 ### Frontend frameworks
+There are many great frameworks available for frontend web app development. We
+decided to use a few of the hottest right now - **AngularJS** and **Bootstrap 3**.
 
 #### Angular
+[Angular](https://angularjs.org/) is a declarative application framework and tool
+belt developed and maintained by Google. It provides a very flexible and
+workable frame to develop versatile JavaScript applications in. Also, it's
+popular.
+
+We decided to use Angular since we all have been curious about this framework,
+and wanted to learn more about it. It has a growing community, and pretty good
+documentation. It would cover our needs, and works well with RESTful APIs like
+the one DHIS has.
 
 #### Bootstrap
+[Bootstrap](http://getbootstrap.com/) (or Twitter Bootstrap, as it was formerly
+known) is "is the most popular HTML, CSS, and JS framework for developing
+responsive, mobile first projects on the web."
 
-### Frontend libraries
-
-#### Underscore
+With Bootstrap 3's focus on mobile first design, we found this framework a prime
+candidate for our UI needs. Responsive design is important for DHIS, and this
+application needs to comply. In addition, it's a great framework to work with,
+and has a great community and set of resources included.
 
 ## Architectural goals, structure and overview
 
