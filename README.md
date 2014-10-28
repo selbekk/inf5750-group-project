@@ -2,11 +2,16 @@
 
 This is a group project for the INF5750 class.
 
-## Technologies
+## Features
+This DHIS2 application features a responsive and easy-to-use API browser. Start
+exploring and experimenting with the DHIS Web API right now! Read more about the
+features in the [features document](docs/FEATURES.md).
 
+## Technologies
 This app uses Yeoman for scaffolding, bower for dependencies, grunt for builds
 and Angular for the application framework itself. Please read more about these
-technologies, frameworks and libraries on their respective web sites.
+technologies, frameworks and libraries in the
+[architecture document](docs/ARCHITECTURE.md).
 
 ## How to install
 
@@ -19,7 +24,7 @@ First, clone the git repo:
 
 Second, install the npm dependencies you need. We use grunt and bower.
 
-    npm install grunt-cli grunt bower
+    sudo npm install -g grunt-cli grunt bower
 
 Third, install all UI dependencies
 
