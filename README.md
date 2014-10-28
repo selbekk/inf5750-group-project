@@ -19,7 +19,7 @@ First, clone the git repo:
 
 Second, install the npm dependencies you need. We use grunt and bower.
 
-    npm install grunt bower
+    npm install grunt-cli grunt bower
 
 Third, install all UI dependencies
 

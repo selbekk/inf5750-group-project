@@ -13,7 +13,20 @@ able to find more information about the technologies chosen.
 
 ### Build and scaffolding tools
 
+In order for this application to maintainable in the future, we decided to use
+some tools for dependency management (Bower), running build tasks (Grunt) and
+scaffolding out our application (Yeoman). Very IT-hipster.
+
 #### Bower
+
+[Bower](http://bower.io/) is a dependency manager for frontend dependencies. It
+simplifies dealing with dependencies, with a central dependency file and
+automatic downloads. All dependencies are kept in the file ``bower.json``, where
+you can update, delete or add new dependencies with a simple command.
+
+We use Bower because maintaining a web app without a dependency manager is a
+huge pain in the rear. Also, whenever we need to depend on a new library - like
+``underscore``, we can simply run ``bower install underscore --save``. 
 
 #### Grunt
 
@@ -116,4 +129,4 @@ a remote source. The data will then be returned to the controller (or a view
 service if needed), which will then populate the scope. Due to the data binding
 provided by Angular, the view is instantly updated.
 
-And that's it for application flow, and architecture in general. 
+And that's it for application flow, and architecture in general.
