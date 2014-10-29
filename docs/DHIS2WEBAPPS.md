@@ -14,35 +14,6 @@ a loosely coupled and clean manner. Apps do not have permissions to interact
 directly with DHIS 2 Java API. Instead, apps are expected to use functionality
 and interact with the DHIS 2 services and data by utilizing the DHIS 2 Web API.
 
-## Components of DHIS2 web-app
-DHIS2 web-app consists of manifest file ``manifest.webapp`` and the HTML, CSS, 
-javascripts files like other web application. The manifest file must be located 
-in the root directory of the web application. Then both manifest and other files
-should be compressed in zip format and uploaded into DHIS2 web-app manager. Once
-installed the web-app will be integrated and avaialble in apps menu.
-Sample manifest file is as follow:
-	
-	{
-		"version": "0.1",
-		"name": "My App",
-		"description": "My App is a Packaged App",
-		"launch_path": "/index.html",
-		"icons": {
-		"16": "/img/icons/mortar-16.png",
-		"48": "/img/icons/mortar-48.png",
-		"128": "/img/icons/mortar-128.png"
-		},
-		"developer": {
-			"name": "Me",
-			"url": "http://me.com"
-		},
-		"default_locale": "en",
-		"activities": {
-			"dhis": {
-				"href": "*"
-				}
-		}
-	}
 
 ## DHIS2 web API
 The Web API is a component which makes it possible for external systems to
@@ -60,10 +31,37 @@ Below is DHIS 2 technical architecture as documented in developer manual. DHIS 2
 web-app is part of presentation layer which communicates to service layer
 through Web API.
 
-![DHIS2 architecture](dhis2-arch.jpg)
+![DHIS2 architecture](resources/dhis2-arch.jpg)
 
-    TODO: Document how we have enabled our application through the
-          manifest.webapp file
+## Components of DHIS2 web-app
+DHIS2 web-app consists of manifest file ``manifest.webapp`` and the HTML, CSS, 
+javascripts files like other web application. The manifest file must be located 
+in the root directory of the web application. Then both manifest and other files
+should be compressed in zip format and uploaded into DHIS2 web-app manager. Once
+installed the web-app will be integrated and avaialble in apps menu.
+Sample manifest file is as follow:
+	
+	{
+		"version": "0.1",
+		"name": "Web-API browser",
+		"description": "This is Web-API browser",
+		"launch_path": "/index.html",
+		"icons": {
+		"16": "/img/icons/mortar-16.png",
+		"48": "/img/icons/mortar-48.png",
+		"128": "/img/icons/mortar-128.png"
+		},
+		"developer": {
+			"name": "ANNK INF5750",
+			"url": "http://me.com"
+		},
+		"default_locale": "en",
+		"activities": {
+			"dhis": {
+				"href": "*"
+				}
+		}
+	}
 
 ## References:
 - DHIS user manual ([link](https://www.dhis2.org/doc/snapshot/en/end-user/html/dhis2_end_user_manual.html))
