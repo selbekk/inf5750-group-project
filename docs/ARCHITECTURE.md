@@ -1,18 +1,15 @@
 # Architecture
-
 This document will provide an overview over the general technical architecture
 of our application. We will discuss which technologies we have decided to use,
 as well as how these technologies will work together. Lastly, we'll provide you
 with a basic interpretation of the application flow.
 
 ## Technologies
-
 This section will give a summary and introduction to all the main technologies
 used in this application. We won't go too much into detail, but you will be
 able to find more information about the technologies chosen.
 
 ### Build and scaffolding tools
-
 In order for this application to maintainable in the future, we decided to use
 some tools for dependency management (Bower), running build tasks (Grunt) and
 scaffolding out our application (Yeoman). Very IT-hipster.
@@ -161,3 +158,12 @@ service if needed), which will then populate the scope. Due to the data binding
 provided by Angular, the view is instantly updated.
 
 And that's it for application flow, and architecture in general.
+
+## A note on testing
+
+We decided against writing tests for our application. Therefore, you won't find
+any karma tests or jasmine test runners in our application.
+
+    TODO: Add reasoning for why not to test
+    TODO: Also rethink whether or not we should have a few token applications
+    

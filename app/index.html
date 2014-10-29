@@ -17,13 +17,8 @@
   <body ng-app="apiViewer">
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Browse</a></li>
-          <li><a href="#">Experiment</a></li>
-          <li><a href="#">API Documentation</a></li>
-        </ul>
         <h3 class="text-muted">API browser</h3>
-    </div>
+      </div>
 
       <div ng-view></div>
 
@@ -59,6 +54,11 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/routing.js"></script>
+        <script src="scripts/controllers/listController.js"></script>
+        <script src="scripts/controllers/singleController.js"></script>
+        <script src="scripts/factories/resourceFactory.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>
