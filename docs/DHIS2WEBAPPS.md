@@ -38,7 +38,7 @@ DHIS2 web-app consists of manifest file ``manifest.webapp`` and the HTML, CSS,
 javascripts files like other web application. The manifest file must be located 
 in the root directory of the web application. Then both manifest and other files
 should be compressed in zip format and uploaded into DHIS2 web-app manager. Once
-installed the web-app will be integrated and avaialble in apps menu.
+installed the web-app will be integrated and available in apps menu.
 Sample manifest file is as follow:
 	
 	{
