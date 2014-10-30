@@ -1,8 +1,8 @@
-app.controller('ListController', function($scope, resourceFactory) {
-    $scope.helloWorld = 'hello world from controller';
+app.controller('ListController', function($scope, resourceFactory, headerFactory) {
+    headerFactory.setTitle('hello title');
+
     var promise = resourceFactory.getAll();
-    // TODO: update scope on load
-    // TODO: remove spinner on load
+
     $scope.endpoints = [
         {
             displayName: 'Maps',
@@ -17,6 +17,4 @@ app.controller('ListController', function($scope, resourceFactory) {
             href: 'https://apps.dhis2.org/demo/api/categoryOptions'
         }
     ];
-    // TODO: listen to selection of endpoint
-        // TODO: Route to single/:id
 });

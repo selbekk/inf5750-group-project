@@ -15,19 +15,15 @@
     <!-- endbuild -->
   </head>
   <body ng-app="apiViewer">
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted">API browser</h3>
-      </div>
 
-      <div ng-view></div>
+        <div class="container">
+            <div ng-controller="HeaderController"
+                 ng-include src="'views/header.html'"
+                 ng-show="header.isVisible">
+             </div>
 
-      <div class="footer">
-        <p>Developed for INF5750 @ UiO. Crafted with love.</p>
-      </div>
-
-    </div>
-
+            <div ng-view></div>
+        </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -55,9 +51,11 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/routing.js"></script>
+        <script src="scripts/controllers/headerController.js"></script>
         <script src="scripts/controllers/listController.js"></script>
         <script src="scripts/controllers/singleController.js"></script>
         <script src="scripts/factories/resourceFactory.js"></script>
+        <script src="scripts/factories/headerFactory.js"></script>
 
         <!-- endbuild -->
 </body>

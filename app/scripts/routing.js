@@ -9,4 +9,5 @@ app.config(function($routeProvider) {
                 templateUrl:'views/single.html'
             })
             .otherwise({redirectTo: '/list'});
+            
 });

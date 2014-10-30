@@ -1,0 +1,11 @@
+<header class="app-header">
+    <section ng-show="{{ header.nav() && header.nav().left }}" class="left-nav">
+        <a ng-click="header.nav().left.click()">{{ header.nav.left.text }}</a>
+    </section>
+    <section class="title">
+        <h1>{{ header.title() }}</h1>
+    </section>
+    <section ng-show="{{ header.nav() && header.nav().right }}"class="right-nav">
+        <a ng-click="header.nav().right.click()">{{ header.nav().right.text }}</a>
+    </section>
+</header>
