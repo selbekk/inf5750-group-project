@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 app.controller('ListController', function($scope, resourceFactory, headerFactory) {
     headerFactory.setTitle('List of API endpoints');

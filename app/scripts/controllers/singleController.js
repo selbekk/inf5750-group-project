@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 app.controller('SingleController',
     function($scope, resourceFactory, $routeParams, headerFactory) {
-        headerFactory.setTitle("Maps");
+        headerFactory.setTitle('Maps');
 
         var promise = resourceFactory.get($routeParams.id);
         // TODO: update scope on load
