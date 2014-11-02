@@ -1,24 +1,9 @@
-/* Body styles and basic styling */
-body {
-    background-color: #FFF8E3;
-    color: #33332D;
-}
+/* Header styles */
 
-a {
-    color: #DB4105;
-}
-
-a:hover,
-a:focus {
-    color: #DB4105;
-    text-decoration: underline;
-}
-
-
-/* Header base styles */
 .app-header {
     background-color: #33332D;
     color: #CCCC9F;
+    margin-bottom: 10px;
 }
 
 .app-header h1 {
@@ -31,6 +16,5 @@ a:focus {
 @media screen and (min-width: 768px) {
     .app-header h1 {
         text-align: left;
-        padding-left: 20px;
     }
 }

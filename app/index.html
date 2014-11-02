@@ -10,15 +10,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css(.tmp) styles/base.css -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/header.css">
     <!-- endbuild -->
   </head>
   <body ng-app="apiViewer">
-    <div ng-controller="HeaderController"
-         ng-include src="'views/header.html'"
-         ng-show="header.isVisible">
-     </div>
+
+    <app-header></app-header>
 
     <div ng-view></div>
 
@@ -53,6 +52,7 @@
         <script src="scripts/controllers/singleController.js"></script>
         <script src="scripts/factories/resourceFactory.js"></script>
         <script src="scripts/factories/headerFactory.js"></script>
+        <script src="scripts/directives/header.js"></script>
 
         <!-- endbuild -->
 </body>
