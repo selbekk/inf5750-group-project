@@ -15,14 +15,12 @@
     <!-- endbuild -->
   </head>
   <body ng-app="apiViewer">
-        <div class="container">
-            <div ng-controller="HeaderController"
-                 ng-include src="'views/header.html'"
-                 ng-show="header.isVisible">
-             </div>
+    <div ng-controller="HeaderController"
+         ng-include src="'views/header.html'"
+         ng-show="header.isVisible">
+     </div>
 
-            <div ng-view></div>
-        </div>
+    <div ng-view></div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
