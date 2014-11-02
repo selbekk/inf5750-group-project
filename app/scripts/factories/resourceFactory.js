@@ -1,3 +1,5 @@
+"use strict";
+
 app.factory('resourceFactory', function() {
     var factory = {};
     factory.getAll = function() {

@@ -1,3 +1,5 @@
+"use strict";
+
 app.factory('headerFactory', function() {
 
     var theTitle = 'Web API browser'; // fall back title

@@ -1,3 +1,5 @@
+"use strict";
+
 app.controller('SingleController',
     function($scope, resourceFactory, $routeParams, headerFactory) {
         headerFactory.setTitle("Maps");

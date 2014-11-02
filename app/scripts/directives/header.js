@@ -1,3 +1,5 @@
+"use strict";
+
 app.directive('appHeader', function() {
     return {
         restrict: 'E',
