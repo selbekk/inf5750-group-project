@@ -164,6 +164,8 @@ And that's it for application flow, and architecture in general.
 We decided against writing tests for our application. Therefore, you won't find
 any karma tests or jasmine test runners in our application.
 
-    TODO: Add reasoning for why not to test
-    TODO: Also rethink whether or not we should have a few token applications
-    
+Angular has a lot of focus on testing, and testing JavaScript applications is
+definitely a thing you should do in a production environment. We decided against
+adding tests to this application since most of our team had no JS testing
+experience whatsoever. We also felt like we should spend our time coding new
+functionality, instead of writing tests.
