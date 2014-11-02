@@ -1,15 +1,15 @@
 /* Body styles and basic styling */
 body {
-    background-color: #FFF8E3;
+    background-color: #FFFFFF;
     color: #33332D;
 }
 
 a {
-    color: #DB4105;
+    color: #df565b;
 }
 
 a:hover,
 a:focus {
-    color: #DB4105;
+    color: #df565b;
     text-decoration: underline;
 }
