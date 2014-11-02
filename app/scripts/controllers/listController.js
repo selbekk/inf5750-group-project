@@ -1,5 +1,5 @@
 app.controller('ListController', function($scope, resourceFactory, headerFactory) {
-    headerFactory.setTitle('hello title');
+    headerFactory.setTitle('List of API endpoints');
 
     var promise = resourceFactory.getAll();
 

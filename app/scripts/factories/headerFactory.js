@@ -1,14 +1,9 @@
 app.factory('headerFactory', function() {
 
-    var nav = '';
-    var theTitle = '';
+    var theTitle = 'Web API browser'; // fall back title
 
     return {
-        isVisible:  function() { return true; } ,
-        nav:   function() { return nav; },
-        setNav: function(obj) {
-            nav = obj;
-        },
+        isVisible:  function() { return !!title; },
         title: function() { return theTitle; },
         setTitle: function(str) {
             theTitle = str;
