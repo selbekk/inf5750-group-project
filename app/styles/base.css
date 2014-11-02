@@ -1,0 +1,15 @@
+/* Body styles and basic styling */
+body {
+    background-color: #FFFFFF;
+    color: #33332D;
+}
+
+a {
+    color: #df565b;
+}
+
+a:hover,
+a:focus {
+    color: #df565b;
+    text-decoration: underline;
+}

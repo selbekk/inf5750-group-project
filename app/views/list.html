@@ -1,11 +1,11 @@
 <div class="container">
-    <h2>All endpoints</h2>
-    <div class="search">
-        <input type="text" ng-model="filter.query" placeholder="API endpoint"/>
+    <div class="search-field-wrapper">
+        <input class="search-field" type="text" ng-model="filter.query" placeholder="search" autofocus/>
     </div>
-    <div class="results">
-        <ul>
-            <li ng-repeat="endpoint in endpoints | filter:filter.query | orderBy:endpoint.displayName">
+    <div class="api-endpoints-wrapper">
+        <ul class="api-endpoints-list">
+            <!-- TODO: We need to create a template that works for all input data -->
+            <li ng-repeat="endpoint in endpoints | filter:filter.query | orderBy:endpoint.displayName" class="list-item api-endpoint">
                 <a href="#/single/{{ endpoint.plural }}">{{endpoint.displayName}}</a>
             </li>
         </ul>
