@@ -4,7 +4,11 @@ app.config(function($routeProvider) {
                 controller: 'ListController',
                 templateUrl: 'views/list.html'
             })
-            .when('/single/:id', {
+            .when('/single/:endpoint', {
+                controller: 'SingleController',
+                templateUrl:'views/single.html'
+            })
+            .when('/single/:endpoint/:id', {
                 controller: 'SingleController',
                 templateUrl:'views/single.html'
             })
