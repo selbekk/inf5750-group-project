@@ -1,4 +1,5 @@
 {
+    "version": "0.1",
     "name": "Web API HTML-view browser",
     "description": "A great way to discover the DHIS APIs",
     "launch_path": "index.html",

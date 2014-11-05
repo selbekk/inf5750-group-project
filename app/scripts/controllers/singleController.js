@@ -9,7 +9,7 @@ app.controller('SingleController', function($scope, resourceFactory, $routeParam
 	  function(payload) { 
 	          if ( $routeParams.id ) {
 		      $scope.endpoints = angular.fromJson(payload.data);
-		      $scope.endpointId = $routeParams.id;
+		      $scope.endpointId = $routeParams.endpoint + '/' + $scope.endpoints.displayName;
 		  }
 	          else {	            
 		      $scope.endpoints = eval('payload.data.' + $routeParams.endpoint);
@@ -22,18 +22,21 @@ app.controller('SingleController', function($scope, resourceFactory, $routeParam
 
     // TODO: remove spinner on load
 
-/* 
-    $scope.keyValuePair = function(endpoints) {
-        angular.forEach(endpoints, function(value , key) {
-           document.write("<li>"+ key + ":" + value +"</li>");
-           angular.forEach(value, function(value2 , key2) {
-                 document.write("<li>"+ key2 + ":" + value2 +"</li>");
-                 angular.forEach(value2, function(value3 , key3) {
-                     document.write("<li>"+ key3 + ":" + value3 +"</li>");
-             })
-           })
-        })
-    }
-*/
+    $scope.isString = function(text){
+        return angular.isString(text);
+    };
+
+    $scope.isArray = function(text){
+        return angular.isArray(text);
+    };
+
+    $scope.isObject = function(text){
+        return angular.isObject(text);
+    };
+
+    $scope.setUrl = function(jsonUrl){
+        return  jsonUrl.substring(jsonUrl.indexOf('/api') + 5, jsonUrl.length);
+    };
+
 
 });
