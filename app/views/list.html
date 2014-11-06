@@ -6,7 +6,7 @@
         <ul class="api-endpoints-list">
             <li ng-repeat="endpoint in endpoints | filter:filter.query | orderBy:endpoint.displayName"
                 class="list-item api-endpoint">
-                <a href="#/single/{{ endpoint.plural }}">{{endpoint.displayName}}</a>
+                <a href="#/{{ endpoint.plural }}">{{endpoint.displayName}}</a>
             </li>
         </ul>
     </div>

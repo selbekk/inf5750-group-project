@@ -6,13 +6,13 @@ app.config(function ($routeProvider) {
             controller: 'ListController',
             templateUrl: 'views/list.html'
         })
-        .when('/single/:endpoint', {
+        .when('/:endpoint', {
             controller: 'SingleController',
-            templateUrl: 'views/single.html'
+            templateUrl: 'views/endpoint.html'
         })
-        .when('/single/:endpoint/:id', {
+        .when('/:endpoint/:id', {
             controller: 'SingleController',
-            templateUrl: 'views/single.html'
+            templateUrl: 'views/endpoint.html'
         })
         .otherwise({redirectTo: '/list'});
 
