@@ -1,19 +1,17 @@
 'use strict';
 
-app.factory('resourceFactory', function() {
+app.factory('resourceFactory', function($http) {
     var factory = {};
 
+    // Get all resources from api/resources.json
     factory.getAll = function() {
-        // TODO: Get all resources from api/resources.json
-        return {}; // TODO: Return the promise
-    };
+       return $http.get('/api/resources.json');
+    }
 
+    // Find the correct id
     factory.get = function(id) {
-        
-        // TODO: Get all resources from api/resources.json
-        // TODO: Find the correct id
-        return {}; // TODO Return the promise
-    };
+       return $http.get('/api/' + id + '.json');
+    }
 
     return factory;
 });
