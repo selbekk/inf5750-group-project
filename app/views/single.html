@@ -2,72 +2,72 @@
 
     <h2>Endpoint: {{ endpointId }}</h2>
 
-<!-- Level-1 -->
-        <ul ng-repeat="(key1, val1) in endpoints">
+    <!-- Level-1 -->
+    <ul ng-repeat="(key1, val1) in endpoints">
 
-            <div ng-if="!isObject(val1) && !isArray(val1)">
-	            <div ng-if="key1 == 'href'">
-	                <li>{{key1}} = <a href="#/single/{{setUrl(val1)}}">Link</a> </li>            
-	            </div>
-	            <div ng-if="key1 != 'href'">
-	                <li>{{key1}} = {{val1}}</li>
-	            </div>
-	    </div>
+        <div ng-if="!isObject(val1) && !isArray(val1)">
+            <div ng-if="key1 == 'href'">
+                <li>{{key1}} = <a href="#/single/{{setUrl(val1)}}">Link</a></li>
+            </div>
+            <div ng-if="key1 != 'href'">
+                <li>{{key1}} = {{val1}}</li>
+            </div>
+        </div>
 
-            <div ng-if="isObject(val1) || isArray(val1)">
-	            <li>{{key1}}  </li>
+        <div ng-if="isObject(val1) || isArray(val1)">
+            <li>{{key1}}</li>
 
-<!-- Level-2 -->
-	            <ul ng-repeat="(key2, val2) in val1">
-		            <div ng-if="!isObject(val2) && !isArray(val2)">
-			            <div ng-if="key2 == 'href'">
-			                <li>{{key2}} = <a href="#/single/{{setUrl(val2)}}">Link</a> </li>            
-			            </div>
-			            <div ng-if="key2 != 'href'">
-			                <li>{{key2}} = {{val2}}</li>
-			            </div>
-			    </div>
-		
-		            <div ng-if="isObject(val2) || isArray(val2)">
-			            <li>{{key2}} </li>
+            <!-- Level-2 -->
+            <ul ng-repeat="(key2, val2) in val1">
+                <div ng-if="!isObject(val2) && !isArray(val2)">
+                    <div ng-if="key2 == 'href'">
+                        <li>{{key2}} = <a href="#/single/{{setUrl(val2)}}">Link</a></li>
+                    </div>
+                    <div ng-if="key2 != 'href'">
+                        <li>{{key2}} = {{val2}}</li>
+                    </div>
+                </div>
 
-<!-- Level-3 -->
-			            <ul ng-repeat="(key3, val3) in val2">
-				            <div ng-if="!isObject(val3) && !isArray(val3)">
-					            <div ng-if="key3 == 'href'">
-					                <li>{{key3}} = <a href="#/single/{{setUrl(val3)}}">Link</a> </li>            
-					            </div>
-					            <div ng-if="key3 != 'href'">
-					                <li>{{key3}} = {{val3}}</li>
-					            </div>
-					    </div>
-				
-				            <div ng-if="isObject(val3) || isArray(val3)">
-					            <li>{{key3}} </li>
+                <div ng-if="isObject(val2) || isArray(val2)">
+                    <li>{{key2}}</li>
 
-					            <ul ng-repeat="(key4, val4) in val3">
-<!-- Level-4 -->
-						            <div ng-if="!isObject(val4) && !isArray(val4)">
-							            <div ng-if="key4 == 'href'">
-							                <li>{{key4}} = <a href="#/single/{{setUrl(val4)}}">Link</a> </li>            
-							            </div>
-							            <div ng-if="key4 != 'href'">
-							                <li>{{key4}} = {{val4}}</li>
-							            </div>
-							    </div>
-						
-						            <div ng-if="isObject(val4) || isArray(val4)">
-							            <li>{{key4}} </li>
-							    </div>
-					            </ul>
+                    <!-- Level-3 -->
+                    <ul ng-repeat="(key3, val3) in val2">
+                        <div ng-if="!isObject(val3) && !isArray(val3)">
+                            <div ng-if="key3 == 'href'">
+                                <li>{{key3}} = <a href="#/single/{{setUrl(val3)}}">Link</a></li>
+                            </div>
+                            <div ng-if="key3 != 'href'">
+                                <li>{{key3}} = {{val3}}</li>
+                            </div>
+                        </div>
 
-					    </div>
-			            </ul>
+                        <div ng-if="isObject(val3) || isArray(val3)">
+                            <li>{{key3}}</li>
 
-			    </div>
-	            </ul>
-	    </div>
+                            <ul ng-repeat="(key4, val4) in val3">
+                                <!-- Level-4 -->
+                                <div ng-if="!isObject(val4) && !isArray(val4)">
+                                    <div ng-if="key4 == 'href'">
+                                        <li>{{key4}} = <a href="#/single/{{setUrl(val4)}}">Link</a></li>
+                                    </div>
+                                    <div ng-if="key4 != 'href'">
+                                        <li>{{key4}} = {{val4}}</li>
+                                    </div>
+                                </div>
 
-        </ul>
+                                <div ng-if="isObject(val4) || isArray(val4)">
+                                    <li>{{key4}}</li>
+                                </div>
+                            </ul>
+
+                        </div>
+                    </ul>
+
+                </div>
+            </ul>
+        </div>
+
+    </ul>
 
 </div>

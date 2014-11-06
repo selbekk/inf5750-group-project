@@ -28,7 +28,7 @@ ul.api-endpoints-list {
     transition: .3s all linear;
 }
 
-.api-endpoint:nth-of-type(2n){
+.api-endpoint:nth-of-type(2n) {
     background-color: #CCCCCC;
 }
 

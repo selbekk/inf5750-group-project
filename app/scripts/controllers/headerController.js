@@ -1,5 +1,5 @@
 'use strict';
 
-app.controller('HeaderController', function($scope, headerFactory) {
-    $scope.header = headerFactory; 
+app.controller('HeaderController', function ($scope, headerFactory) {
+    $scope.header = headerFactory;
 });
