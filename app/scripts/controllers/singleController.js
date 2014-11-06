@@ -40,7 +40,4 @@ app.controller('SingleController', function($scope, resourceFactory, $routeParam
     $scope.setUrl = function(jsonUrl){
         return  jsonUrl.substring(jsonUrl.indexOf('/api') + 5, jsonUrl.length);
     };
-
-
->>>>>>> nugrohos_branch
 });

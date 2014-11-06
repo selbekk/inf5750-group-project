@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ListController', function($scope, resourceFactory, headerFactory, $http) {
+app.controller('ListController', function($scope, resourceFactory, headerFactory, $http, $log) {
     headerFactory.setTitle('List of API endpoints');
 
     var promise = resourceFactory.getAll();
