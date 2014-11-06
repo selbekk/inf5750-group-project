@@ -134,20 +134,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Renames files for browser caching purposes
-    rev: {
-      dist: {
-        files: {
-          src: [
-            '<%= config.dist %>/scripts/{,*/}*.js',
-            '<%= config.dist %>/styles/{,*/}*.css',
-            '<%= config.dist %>/images/{,*/}*.*',
-            '<%= config.dist %>/styles/fonts/{,*/}*.*',
-            '<%= config.dist %>/*.{ico,png}'
-          ]
-        }
-      }
-    },
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -241,7 +227,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= config.dist %>'
-        }]
+      },
+      {
+          src: 'bower_components/**',
+          dest: '<%= config.dist %>/'
+      }]
       },
       styles: {
         expand: true,
@@ -267,9 +257,20 @@ module.exports = function (grunt) {
       ]
     },
 
+    // Use uglify to avoid breaking angular dependency injections
+    uglify: {
+       options: {
+           mangle:false
+       }
+    },
+
     // Zip the distribution folder
     zip: {
-        'webapp.zip': ['dist/**']
+        'using-cwd': {
+            cwd: '<%= config.dist %>',
+            src: '<%= config.dist %>/**',
+            dest: 'apiviewer.zip'
+        }
     }
   });
 
@@ -302,9 +303,10 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
-    'rev',
-    'usemin',
-    'htmlmin'
+    //'rev',
+    //'usemin',
+    'htmlmin',
+    'zip'
   ]);
 
   grunt.registerTask('default', [

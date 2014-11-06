@@ -1,7 +1,7 @@
 {
     "version": "0.3",
     "name": "Web API HTML-view browser",
-    "description": "A great way to discover the DHIS APIs",
+    "description": "A great way to discover the DHIS Web APIs",
     "launch_path": "index.html",
     "icons": {
         "512": "/images/icons/app-icon-512x512.png",
