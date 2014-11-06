@@ -10,3 +10,9 @@ dist/
 
 # Ignore temporary grunt folder
 .tmp/
+
+# No need to remember the logs
+*.log
+
+# ...or the zip archives
+*.zip
