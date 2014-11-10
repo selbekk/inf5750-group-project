@@ -1,4 +1,8 @@
 /* Body styles and basic styling */
+html, body, .api-app {
+    height: 100%;
+}
+
 body {
     background-color: #FFFFFF;
     color: #33332D;

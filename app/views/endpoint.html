@@ -1,6 +1,6 @@
-<div class="container">
+<div class="full-height container">
 
-    <!-- Level-1 -->
+    <!--
     <ul ng-repeat="(key1, val1) in endpoints">
 
         <div ng-if="!isObject(val1) && !isArray(val1)">
@@ -15,7 +15,6 @@
         <div ng-if="isObject(val1) || isArray(val1)">
             <li>{{key1}}</li>
 
-            <!-- Level-2 -->
             <ul ng-repeat="(key2, val2) in val1">
                 <div ng-if="!isObject(val2) && !isArray(val2)">
                     <div ng-if="key2 == 'href'">
@@ -29,7 +28,6 @@
                 <div ng-if="isObject(val2) || isArray(val2)">
                     <li>{{key2}}</li>
 
-                    <!-- Level-3 -->
                     <ul ng-repeat="(key3, val3) in val2">
                         <div ng-if="!isObject(val3) && !isArray(val3)">
                             <div ng-if="key3 == 'href'">
@@ -44,7 +42,6 @@
                             <li>{{key3}}</li>
 
                             <ul ng-repeat="(key4, val4) in val3">
-                                <!-- Level-4 -->
                                 <div ng-if="!isObject(val4) && !isArray(val4)">
                                     <div ng-if="key4 == 'href'">
                                         <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Link</a></li>
@@ -64,4 +61,40 @@
             </ul>
         </div>
     </ul>
+    -->
+    <div ng-show="resources">
+        <div class="search-field-wrapper">
+            <input class="search-field" type="text" ng-model="filter.query" placeholder="search" autofocus/>
+        </div>
+        <ul class="resource-list">
+            <li ng-repeat="res in resources | filter:filter.query | orderBy:res.displayName" class="endpoint">
+                <div class="resource">
+                    <h3><a href="#/{{endpointId}}/{{ res.id }}">{{ res.name }}</a></h3>
+                    <div class="meta">
+                        <span class="glyphicon glyphicon-time"></span> {{ res.lastUpdated }}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-show="resource">
+        <div class="resource">
+            <h3>{{ resource.displayName }}</h3>
+            <div class="meta">
+                <div class="time">
+                    <span class="glyphicon glyphicon-time"></span> {{ resource.lastUpdated }}
+                </div>
+                <div class="accesses">
+                    <span ng-repeat="(key, val) in resource.access" ng-show="val" class="access"><span class="glyphicon glyphicon-ok"></span> {{ key }} </span>
+                </div>
+            </div>
+            <div class="content" hljs source="jsonify(resource)" language="json"></div>
+        </div>
+    </div>
+
+    <div ng-show="output">
+        <h2>Browse the JSON</h2>
+        <div hljs source="output" language="json" class="output-window"></div>
+    </div>
 </div>

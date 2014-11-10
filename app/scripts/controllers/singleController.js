@@ -9,11 +9,14 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
     resourceFactory.get(url).then(
         function (payload) {
             if ($routeParams.id) {
-                $scope.endpoints = angular.fromJson(payload.data);
+                $scope.resource = angular.fromJson(payload.data);
+                $scope.output = JSON.stringify(payload.data, undefined, 2);
                 $scope.endpointId = $routeParams.endpoint + '/' + $scope.endpoints.displayName;
+
             }
             else {
-                $scope.endpoints = payload.data[$routeParams.endpoint];
+                $scope.resources = payload.data[$routeParams.endpoint];
+                $scope.output = JSON.stringify(payload.data[$routeParams.endpoint], undefined, 2);
                 $scope.endpointId = $routeParams.endpoint;
             }
         },
@@ -37,5 +40,9 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
 
     $scope.setUrl = function (jsonUrl) {
         return  jsonUrl.substring(jsonUrl.indexOf('/api') + 5, jsonUrl.length);
+    };
+
+    $scope.jsonify = function(resource) {
+        return JSON.stringify(resource, undefined, 2);
     };
 });
