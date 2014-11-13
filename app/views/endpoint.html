@@ -42,7 +42,7 @@
 	                        <span class="glyphicon glyphicon-time"></span> {{ val1.substr(11,8) }}
 			</li>
 	            </div>
-	            <div > <!--ng-if="key1 != 'href' && !isDateTime(val1)"-->
+	            <div ng-if="key1 != 'href' && !isDateTime(val1)">
 	                <li>{{key1}} = {{val1}} </li>
 	            </div>
 	        </div>
