@@ -45,4 +45,13 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
     $scope.jsonify = function(resource) {
         return JSON.stringify(resource, undefined, 2);
     };
+
+    $scope.isDateTime = function(text){
+    // DHIS date & time data type is ISO = YYYY-MM-DDTHH:MM:SS
+	var tester = /^[0-9]+$/;
+	if ( text.length >= 10 && text.substr(4,1) == "-" && text.substr(7,1) == "-" ) 
+		return  tester.test(text.substr(0,4)) && tester.test(text.substr(5,2)) ;
+        else return false;
+    };
+
 });
