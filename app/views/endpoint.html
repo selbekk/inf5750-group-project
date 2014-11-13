@@ -1,11 +1,11 @@
 <div class="full-height container">
 
-    <!--
-    <ul ng-repeat="(key1, val1) in endpoints">
+ <div ng-if="resource">
+    <ul ng-repeat="(key1, val1) in resource">
 
         <div ng-if="!isObject(val1) && !isArray(val1)">
             <div ng-if="key1 == 'href'">
-                <li>{{key1}} = <a href="#/{{setUrl(val1)}}">Link</a></li>
+                <li>{{key1}} = <a href="#/{{setUrl(val1)}}">Explore the detail!</a></li>
             </div>
             <div ng-if="key1 != 'href'">
                 <li>{{key1}} = {{val1}}</li>
@@ -18,7 +18,7 @@
             <ul ng-repeat="(key2, val2) in val1">
                 <div ng-if="!isObject(val2) && !isArray(val2)">
                     <div ng-if="key2 == 'href'">
-                        <li>{{key2}} = <a href="#/{{setUrl(val2)}}">Link</a></li>
+                        <li>{{key2}} = <a href="#/{{setUrl(val2)}}">Explore the detail!</a></li>
                     </div>
                     <div ng-if="key2 != 'href'">
                         <li>{{key2}} = {{val2}}</li>
@@ -31,7 +31,7 @@
                     <ul ng-repeat="(key3, val3) in val2">
                         <div ng-if="!isObject(val3) && !isArray(val3)">
                             <div ng-if="key3 == 'href'">
-                                <li>{{key3}} = <a href="#/{{setUrl(val3)}}">Link</a></li>
+                                <li>{{key3}} = <a href="#/{{setUrl(val3)}}">Explore the detail!</a></li>
                             </div>
                             <div ng-if="key3 != 'href'">
                                 <li>{{key3}} = {{val3}}</li>
@@ -44,15 +44,11 @@
                             <ul ng-repeat="(key4, val4) in val3">
                                 <div ng-if="!isObject(val4) && !isArray(val4)">
                                     <div ng-if="key4 == 'href'">
-                                        <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Link</a></li>
+                                        <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Explore the detail!</a></li>
                                     </div>
                                     <div ng-if="key4 != 'href'">
                                         <li>{{key4}} = {{val4}}</li>
                                     </div>
-                                </div>
-
-                                <div ng-if="isObject(val4) || isArray(val4)">
-                                    <li>{{key4}}</li>
                                 </div>
                             </ul>
                         </div>
@@ -61,7 +57,8 @@
             </ul>
         </div>
     </ul>
-    -->
+ </div>
+
     <div ng-show="resources">
         <div class="search-field-wrapper">
             <input class="search-field" type="text" ng-model="filter.query" placeholder="search" autofocus/>
