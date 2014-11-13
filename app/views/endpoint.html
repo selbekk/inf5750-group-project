@@ -93,19 +93,16 @@
 	                                    <div ng-if="key4 == 'href'">
 	                                        <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Explore the detail!</a></li>
 	                                    </div>
-	  		    	    	    <div ng-if="isDateTime(val3)">
-						<li>{{key3}} = 
-					        	<span class="glyphicon glyphicon-calendar"></span> {{ val3.substr(0,10) }}
-					        	<span class="glyphicon glyphicon-time"></span> {{ val3.substr(11,8) }}
+	  		    	    	    <div ng-if="isDateTime(val4)">
+						<li>{{key4}} = 
+					        	<span class="glyphicon glyphicon-calendar"></span> {{ val4.substr(0,10) }}
+					        	<span class="glyphicon glyphicon-time"></span> {{ val4.substr(11,8) }}
 						</li>
 			     	    	    </div>
-			     	    	    <div ng-if="key3 != 'href' && !isDateTime(val3)">
-				        	<li>{{key3}} = {{val3}} </li>
+			     	    	    <div ng-if="key4 != 'href' && !isDateTime(val4)">
+				        	<li>{{key4}} = {{val4}} </li>
 			     	    	    </div>
 	                                </div>
-			                <div ng-if="isObject(val4) || isArray(val4)">
-				            <li>{{key4}} </li>
-				        </div>
 	                            </ul>
 	                        </div>
 	                    </ul>
