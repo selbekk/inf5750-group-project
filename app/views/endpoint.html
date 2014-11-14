@@ -30,6 +30,23 @@
                 </div>
             </div>
 
+	    <div ng-if="isChart(resource.href)">
+		<img src="/api/charts/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isMap(resource.href)">
+		<img src="/api/maps/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isMapViews(resource.href)">
+		<img src="/api/mapViews/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isReport(resource.href)">
+		<object data="/api/reports/{{resource.id}}/data" type="application/pdf" width="800" height="1000">		 
+		</object>
+	    </div>
+
 	    <ul ng-repeat="(key1, val1) in resource">
 	
 	        <div ng-if="!isObject(val1) && !isArray(val1)">

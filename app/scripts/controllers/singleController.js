@@ -54,4 +54,19 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
         else return false;
     };
 
+    $scope.isChart = function (text) {
+        return text.search("charts") >= 0;
+    };
+
+    $scope.isMap = function (text) {
+        return text.search("maps") >= 0 ;
+    };
+
+    $scope.isReport = function (text) {
+        return text.search("reports") >= 0;
+    };
+
+    $scope.isMapViews = function (text) {
+        return text.search("mapViews") >= 0 ;
+    };
 });
