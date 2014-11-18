@@ -1,67 +1,5 @@
 <div class="full-height container">
 
-    <!--
-    <ul ng-repeat="(key1, val1) in endpoints">
-
-        <div ng-if="!isObject(val1) && !isArray(val1)">
-            <div ng-if="key1 == 'href'">
-                <li>{{key1}} = <a href="#/{{setUrl(val1)}}">Link</a></li>
-            </div>
-            <div ng-if="key1 != 'href'">
-                <li>{{key1}} = {{val1}}</li>
-            </div>
-        </div>
-
-        <div ng-if="isObject(val1) || isArray(val1)">
-            <li>{{key1}}</li>
-
-            <ul ng-repeat="(key2, val2) in val1">
-                <div ng-if="!isObject(val2) && !isArray(val2)">
-                    <div ng-if="key2 == 'href'">
-                        <li>{{key2}} = <a href="#/{{setUrl(val2)}}">Link</a></li>
-                    </div>
-                    <div ng-if="key2 != 'href'">
-                        <li>{{key2}} = {{val2}}</li>
-                    </div>
-                </div>
-
-                <div ng-if="isObject(val2) || isArray(val2)">
-                    <li>{{key2}}</li>
-
-                    <ul ng-repeat="(key3, val3) in val2">
-                        <div ng-if="!isObject(val3) && !isArray(val3)">
-                            <div ng-if="key3 == 'href'">
-                                <li>{{key3}} = <a href="#/{{setUrl(val3)}}">Link</a></li>
-                            </div>
-                            <div ng-if="key3 != 'href'">
-                                <li>{{key3}} = {{val3}}</li>
-                            </div>
-                        </div>
-
-                        <div ng-if="isObject(val3) || isArray(val3)">
-                            <li>{{key3}}</li>
-
-                            <ul ng-repeat="(key4, val4) in val3">
-                                <div ng-if="!isObject(val4) && !isArray(val4)">
-                                    <div ng-if="key4 == 'href'">
-                                        <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Link</a></li>
-                                    </div>
-                                    <div ng-if="key4 != 'href'">
-                                        <li>{{key4}} = {{val4}}</li>
-                                    </div>
-                                </div>
-
-                                <div ng-if="isObject(val4) || isArray(val4)">
-                                    <li>{{key4}}</li>
-                                </div>
-                            </ul>
-                        </div>
-                    </ul>
-                </div>
-            </ul>
-        </div>
-    </ul>
-    -->
     <div ng-show="resources">
         <div class="search-field-wrapper">
             <input class="search-field" type="text" ng-model="filter.query" placeholder="search" autofocus/>
@@ -71,7 +9,8 @@
                 <div class="resource">
                     <h3><a href="#/{{endpointId}}/{{ res.id }}">{{ res.name }}</a></h3>
                     <div class="meta">
-                        <span class="glyphicon glyphicon-time"></span> {{ res.lastUpdated }}
+                        <span class="glyphicon glyphicon-calendar"></span> {{ res.lastUpdated.substr(0,10) }}
+                        <span class="glyphicon glyphicon-time"></span> {{ res.lastUpdated.substr(11,8) }}
                     </div>
                 </div>
             </li>
@@ -83,13 +22,114 @@
             <h3>{{ resource.displayName }}</h3>
             <div class="meta">
                 <div class="time">
-                    <span class="glyphicon glyphicon-time"></span> {{ resource.lastUpdated }}
+	             <span class="glyphicon glyphicon-calendar"></span> {{ resource.lastUpdated.substr(0,10) }}
+	             <span class="glyphicon glyphicon-time"></span> {{ resource.lastUpdated.substr(11,8) }}
                 </div>
                 <div class="accesses">
                     <span ng-repeat="(key, val) in resource.access" ng-show="val" class="access"><span class="glyphicon glyphicon-ok"></span> {{ key }} </span>
                 </div>
             </div>
+
+	    <div ng-if="isChart(resource.href)">
+		<img src="/api/charts/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isMap(resource.href)">
+		<img src="/api/maps/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isMapViews(resource.href)">
+		<img src="/api/mapViews/{{resource.id}}/data">
+	    </div>
+
+	    <div ng-if="isReport(resource.href)">
+		<object data="/api/reports/{{resource.id}}/data" type="application/pdf" width="800" height="1000">		 
+		</object>
+	    </div>
+
+	    <ul ng-repeat="(key1, val1) in resource">
+	
+	        <div ng-if="!isObject(val1) && !isArray(val1)">
+	            <div ng-if="key1 == 'href'">
+	                <li>{{key1}} = <a href="#/{{setUrl(val1)}}">Explore the detail!</a></li>
+	            </div>
+	            <div ng-if="isDateTime(val1)">
+	                <li>{{key1}} = 
+	                        <span class="glyphicon glyphicon-calendar"></span> {{ val1.substr(0,10) }}
+	                        <span class="glyphicon glyphicon-time"></span> {{ val1.substr(11,8) }}
+			</li>
+	            </div>
+	            <div ng-if="key1 != 'href' && !isDateTime(val1)">
+	                <li>{{key1}} = {{val1}} </li>
+	            </div>
+	        </div>
+	
+	        <div ng-if="isObject(val1) || isArray(val1)">
+	            <li>{{key1}}</li>
+	
+	            <ul ng-repeat="(key2, val2) in val1">
+	                <div ng-if="!isObject(val2) && !isArray(val2)">
+	                    <div ng-if="key2 == 'href'">
+	                        <li>{{key2}} = <a href="#/{{setUrl(val2)}}">Explore the detail!</a></li>
+	  		    </div>
+	  		    <div ng-if="isDateTime(val2)">
+				<li>{{key2}} = 
+				        <span class="glyphicon glyphicon-calendar"></span> {{ val2.substr(0,10) }}
+				        <span class="glyphicon glyphicon-time"></span> {{ val2.substr(11,8) }}
+				</li>
+			     </div>
+			     <div ng-if="key2 != 'href' && !isDateTime(val2)">
+			        <li>{{key2}} = {{val2}} </li>
+			     </div>
+	                </div>
+	
+	                <div ng-if="isObject(val2) || isArray(val2)">
+	                    <li>{{key2}}</li>
+	
+	                    <ul ng-repeat="(key3, val3) in val2">
+	                        <div ng-if="!isObject(val3) && !isArray(val3)">
+	                            <div ng-if="key3 == 'href'">
+	                                <li>{{key3}} = <a href="#/{{setUrl(val3)}}">Explore the detail!</a></li>
+	                            </div>
+	  		    	    <div ng-if="isDateTime(val3)">
+					<li>{{key3}} = 
+					        <span class="glyphicon glyphicon-calendar"></span> {{ val3.substr(0,10) }}
+					        <span class="glyphicon glyphicon-time"></span> {{ val3.substr(11,8) }}
+					</li>
+			     	    </div>
+			     	    <div ng-if="key3 != 'href' && !isDateTime(val3)">
+				        <li>{{key3}} = {{val3}} </li>
+			     	    </div>
+	                        </div>
+	
+	                        <div ng-if="isObject(val3) || isArray(val3)">
+	                            <li>{{key3}}</li>
+	
+	                            <ul ng-repeat="(key4, val4) in val3">
+			                <div ng-if="!isObject(val4) && !isArray(val4)">
+	                                    <div ng-if="key4 == 'href'">
+	                                        <li>{{key4}} = <a href="#/{{setUrl(val4)}}">Explore the detail!</a></li>
+	                                    </div>
+	  		    	    	    <div ng-if="isDateTime(val4)">
+						<li>{{key4}} = 
+					        	<span class="glyphicon glyphicon-calendar"></span> {{ val4.substr(0,10) }}
+					        	<span class="glyphicon glyphicon-time"></span> {{ val4.substr(11,8) }}
+						</li>
+			     	    	    </div>
+			     	    	    <div ng-if="key4 != 'href' && !isDateTime(val4)">
+				        	<li>{{key4}} = {{val4}} </li>
+			     	    	    </div>
+	                                </div>
+	                            </ul>
+	                        </div>
+	                    </ul>
+	                </div>
+	            </ul>
+	        </div>
+	    </ul>
+	    <!--
             <div class="content" hljs source="jsonify(resource)" language="json"></div>
+            -->
         </div>
     </div>
 
