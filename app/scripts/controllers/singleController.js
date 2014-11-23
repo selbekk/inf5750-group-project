@@ -26,6 +26,8 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
             // TODO: Or redirect him to the list page and show an error there
         });
 
+    $scope.previewNoun = 'Show';
+
     $scope.isString = function (text) {
         return angular.isString(text);
     };
@@ -55,19 +57,19 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
     };
 
     $scope.isChart = function (href) {
-        return href && href.search("charts") >= 0;
+        return href && href.search("charts") > -1;
     };
 
     $scope.isMap = function (href) {
-        return href && href.search("maps") >= 0 ;
+        return href && href.search("maps") > -1;
     };
 
     $scope.isReport = function (href) {
-        return href && href.search("reports") >= 0;
+        return href && href.search("reports") > -1;
     };
 
     $scope.isMapViews = function (href) {
-        return href && href.search("mapViews") >= 0 ;
+        return href && href.search("mapViews") > -1;
     };
 
     $scope.isPreview = function(href) {
@@ -77,5 +79,10 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
                 || $scope.isReport(href)
                 || $scope.isMapViews(href)
             );
-    }
+    };
+
+    $scope.togglePreview = function() {
+        $scope.showPreview = !$scope.showPreview;
+        $scope.previewNoun = $scope.showPreview ? 'Hide' : 'Show';
+    };
 });

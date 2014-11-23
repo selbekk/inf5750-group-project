@@ -32,11 +32,18 @@
                 </div>
             </div>
 
-        <div class="expandable preview" ng-if="isPreview(resource.href)">
-            <img src="/api/charts/{{resource.id}}/data" ng-if="isChart(resource.href)">
-            <img src="/api/maps/{{resource.id}}/data" ng-if="isMap(resource.href)">
-            <img src="/api/mapViews/{{resource.id}}/data" ng-if="isMapViews(resource.href)">
-            <object data="/api/reports/{{resource.id}}/data" type="application/pdf" width="800" height="1000" ng-if="isReport(resource.href)"></object>
+        <div class="expandable preview-wrapper" ng-if="isPreview(resource.href)">
+            <h3 ng-click="togglePreview()">{{ previewNoun }} data preview</h3>
+            <div class="preview-body" ng-show="showPreview">
+                <img ng-if="isChart(resource.href)" src="/api/charts/{{ resource.id }}/data">
+                <img ng-if="isMap(resource.href)" src="/api/maps/{{ resource.id }}/data">
+                <img ng-if="isMapViews(resource.href)" src="/api/mapViews/{{ resource.id }}/data">
+                <object ng-if="isReport(resource.href)"
+                        data="/api/reports/{{ resource.id }}/data"
+                        type="application/pdf"
+                        width="800" height="1000">
+                </object>
+            </div>
         </div>
 
 	    <ul ng-repeat="(key1, val1) in resource">
