@@ -48,63 +48,63 @@
             <li ng-repeat="(key1, val1) in resource" class="property">
                 <div ng-if="!isObject(val1) && !isArray(val1)" class="property-simple">
                     <div ng-if="key1 == 'href'" class="property-link">
-                        {{key1}}: <a href="#/{{setUrl(val1)}}">{{ val1 }}</a>
+                        <strong>{{key1}}:</strong> <a href="#/{{setUrl(val1)}}">{{ val1 }}</a>
                     </div>
                     <div ng-if="isDateTime(val1)" class="property-datetime">
-                        {{key1}}: {{ val1.substr(0,10) }} {{ val1.substr(11,8) }}
+                        <strong>{{key1}}:</strong> {{ val1.substr(0,10) }} {{ val1.substr(11,8) }}
                     </div>
                     <div ng-if="key1 != 'href' && !isDateTime(val1)" class="property-string">
-                        {{key1}}: {{val1}}
+                        <strong>{{key1}}:</strong> {{val1}}
                     </div>
                 </div>
 
                 <div ng-if="isObject(val1) || isArray(val1)" class="property-complex">
 
-                    <h3>{{key1}}</h3>
+                    <h3>{{key1}}:</h3>
                     <ul class="properties level-2">
                         <li ng-repeat="(key2, val2) in val1" class="property">
                             <div ng-if="!isObject(val2) && !isArray(val2)" class="property-simple">
                                 <div ng-if="key2 == 'href'" class="property-link">
-                                    {{key2}}: <a href="#/{{setUrl(val2)}}">{{ val2 }}</a>
+                                    <strong>{{key2}}:</strong> <a href="#/{{setUrl(val2)}}">{{ val2 }}</a>
                                 </div>
                                 <div ng-if="isDateTime(val2)" class="property-datetime">
-                    				{{key2}}: {{ val2.substr(0,10) }} {{ val2.substr(11,8) }}
+                    				<strong>{{key2}}:</strong> {{ val2.substr(0,10) }} {{ val2.substr(11,8) }}
                                 </div>
                 			    <div ng-if="key2 != 'href' && !isDateTime(val2)" class="property-string">
-                			       {{key2}}: {{val2}}
+                			       <strong>{{key2}}:</strong> {{val2}}
                 			    </div>
                             </div>
 
                             <div ng-if="isObject(val2) || isArray(val2)" class="property-complex">
-                                <h3>{{key2}}</h3>
+                                <h3>{{key2}}:</h3>
                                 <ul class="properties level-3">
                                     <li ng-repeat="(key3, val3) in val2" class="property">
                                         <div ng-if="!isObject(val3) && !isArray(val3)" class="property-simple">
                                             <div ng-if="key3 == 'href'" class="property-link">
-                                                {{key3}}: <a href="#/{{setUrl(val3)}}">{{ val3 }}</a>
+                                                <strong>{{key3}}:</strong> <a href="#/{{setUrl(val3)}}">{{ val3 }}</a>
                                             </div>
                     	                    <div ng-if="isDateTime(val3)" class="property-datetime">
-                                                {{key3}}: {{ val3.substr(0,10) }} {{ val3.substr(11,8) }}
+                                                <strong>{{key3}}:</strong> {{ val3.substr(0,10) }} {{ val3.substr(11,8) }}
             	                            </div>
                      	                    <div ng-if="key3 != 'href' && !isDateTime(val3)" class="property-string">
-                	                            {{key3}}: {{val3}}
+                	                            <strong>{{key3}}:</strong> {{val3}}
                      	                    </div>
                                         </div>
 
                                         <div ng-if="isObject(val3) || isArray(val3)" class="property-complex">
 
-                                            <h3>{{key3}}</h3>
+                                            <h3>{{key3}}:</h3>
                                             <ul class="properties level-4">
                                                 <li ng-repeat="(key4, val4) in val3" class="property">
                     	                            <div ng-if="!isObject(val4) && !isArray(val4)" class="property-simple">
                                                         <div ng-if="key4 == 'href'" class="property-link">
-                                                            {{key4}}: <a href="#/{{setUrl(val4)}}">{{ val4 }}</a>
+                                                            <strong>{{key4}}:</strong> <a href="#/{{setUrl(val4)}}">{{ val4 }}</a>
                                                         </div>
                         	    	                    <div ng-if="isDateTime(val4)" class="property-datetime">
-                                    						{{key4}}: {{ val4.substr(0,10) }} {{ val4.substr(11,8) }}
+                                    						<strong>{{key4}}:</strong> {{ val4.substr(0,10) }} {{ val4.substr(11,8) }}
                         			     	    	    </div>
                      	    	                        <div ng-if="key4 != 'href' && !isDateTime(val4)">
-                                				        	{{key4}}: {{val4}}
+                                				        	<strong>{{key4}}:</strong> {{val4}}
                          	    	                    </div>
                                                     </div>
                                                 </li>

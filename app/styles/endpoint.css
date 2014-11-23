@@ -79,16 +79,25 @@ ul.resource-list {
 
 .properties {
     padding: 0;
-    margin: 0;
+    margin: 10px 0;
     list-style-type: none;
+    border: 1px solid #ccc;
+
 }
 
-.properties .properties {
+.properties.level-2 {
     margin-left: 20px;
 }
 
-.properties .properties .properties {
+.properties.level-3 {
     margin-left: 40px;
+}
+
+.properties.level-2,
+.properties.level-3 {
+    -webkit-box-shadow: 0px 15px 30px -8px rgba(17,17,17,0.5);
+    -moz-box-shadow: 0px 15px 30px -8px rgba(17,17,17,0.5);
+    box-shadow: 0px 15px 30px -8px rgba(17,17,17,0.5);
 }
 
 .property {
