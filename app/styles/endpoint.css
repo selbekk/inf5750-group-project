@@ -76,3 +76,28 @@ ul.resource-list {
     display: block;
     min-width: 60%;
 }
+
+.properties {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.properties .properties {
+    margin-left: 20px;
+}
+
+.properties .properties .properties {
+    margin-left: 40px;
+}
+
+.property {
+    padding: 10px;
+    background-color: #d4d4d4;
+    color: #333;
+    margin: 0;
+}
+
+.properties .property:nth-of-type(odd) {
+    background-color: #eeeeee;
+}
