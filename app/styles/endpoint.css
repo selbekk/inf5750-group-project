@@ -72,5 +72,7 @@ ul.resource-list {
 }
 
 .preview-wrapper .preview-body img {
-    width: 100%;
+    margin: 0 auto;
+    display: block;
+    min-width: 60%;
 }
