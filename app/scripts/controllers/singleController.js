@@ -55,25 +55,27 @@ app.controller('SingleController', function ($scope, resourceFactory, $routePara
     };
 
     $scope.isChart = function (href) {
-        return href.search("charts") >= 0;
+        return href && href.search("charts") >= 0;
     };
 
     $scope.isMap = function (href) {
-        return href.search("maps") >= 0 ;
+        return href && href.search("maps") >= 0 ;
     };
 
     $scope.isReport = function (href) {
-        return href.search("reports") >= 0;
+        return href && href.search("reports") >= 0;
     };
 
     $scope.isMapViews = function (href) {
-        return href.search("mapViews") >= 0 ;
+        return href && href.search("mapViews") >= 0 ;
     };
 
     $scope.isPreview = function(href) {
-        return $scope.isChart(href)
-            || $scope.isMap(href)
-            || $scope.isReport(href)
-            || $scope.isMapViews(href);
+        return href && (
+                $scope.isChart(href)
+                || $scope.isMap(href)
+                || $scope.isReport(href)
+                || $scope.isMapViews(href)
+            );
     }
 });
