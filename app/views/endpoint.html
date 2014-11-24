@@ -8,6 +8,7 @@
             <li ng-repeat="res in resources | filter:filter.query | orderBy:res.displayName" class="endpoint">
                 <div class="resource">
                     <h3><a href="#/{{endpointId}}/{{ res.id }}">{{ res.name }}</a></h3>
+
                     <div class="meta">
                         <span class="glyphicon glyphicon-calendar"></span> {{ res.lastUpdated.substr(0,10) }}
                         <span class="glyphicon glyphicon-time"></span> {{ res.lastUpdated.substr(11,8) }}
@@ -19,6 +20,7 @@
 
     <div ng-show="resource" class="resource">
         <h3>{{ resource.displayName }}</h3>
+
         <div class="meta">
             <div class="time">
                 <span class="glyphicon glyphicon-calendar"></span> {{ resource.lastUpdated.substr(0,10) }}
@@ -33,6 +35,7 @@
 
         <div class="expandable preview-wrapper" ng-if="isPreview(resource.href)">
             <h3 ng-click="togglePreview()">{{ previewNoun }} data preview</h3>
+
             <div class="preview-body" ng-show="showPreview">
                 <img ng-if="isChart(resource.href)" src="/api/charts/{{ resource.id }}/data">
                 <img ng-if="isMap(resource.href)" src="/api/maps/{{ resource.id }}/data">
@@ -68,11 +71,11 @@
                                     <strong>{{key2}}:</strong> <a href="#/{{setUrl(val2)}}">{{ val2 }}</a>
                                 </div>
                                 <div ng-if="isDateTime(val2)" class="property-datetime">
-                    				<strong>{{key2}}:</strong> {{ val2.substr(0,10) }} {{ val2.substr(11,8) }}
+                                    <strong>{{key2}}:</strong> {{ val2.substr(0,10) }} {{ val2.substr(11,8) }}
                                 </div>
-                			    <div ng-if="key2 != 'href' && !isDateTime(val2)" class="property-string">
-                			       <strong>{{key2}}:</strong> {{val2}}
-                			    </div>
+                                <div ng-if="key2 != 'href' && !isDateTime(val2)" class="property-string">
+                                    <strong>{{key2}}:</strong> {{val2}}
+                                </div>
                             </div>
 
                             <div ng-if="isObject(val2) || isArray(val2)" class="property-complex">
@@ -83,12 +86,13 @@
                                             <div ng-if="key3 == 'href'" class="property-link">
                                                 <strong>{{key3}}:</strong> <a href="#/{{setUrl(val3)}}">{{ val3 }}</a>
                                             </div>
-                    	                    <div ng-if="isDateTime(val3)" class="property-datetime">
-                                                <strong>{{key3}}:</strong> {{ val3.substr(0,10) }} {{ val3.substr(11,8) }}
-            	                            </div>
-                     	                    <div ng-if="key3 != 'href' && !isDateTime(val3)" class="property-string">
-                	                            <strong>{{key3}}:</strong> {{val3}}
-                     	                    </div>
+                                            <div ng-if="isDateTime(val3)" class="property-datetime">
+                                                <strong>{{key3}}:</strong> {{ val3.substr(0,10) }} {{ val3.substr(11,8)
+                                                }}
+                                            </div>
+                                            <div ng-if="key3 != 'href' && !isDateTime(val3)" class="property-string">
+                                                <strong>{{key3}}:</strong> {{val3}}
+                                            </div>
                                         </div>
 
                                         <div ng-if="isObject(val3) || isArray(val3)" class="property-complex">
@@ -96,16 +100,19 @@
                                             <h3>{{key3}}:</h3>
                                             <ul class="properties level-4">
                                                 <li ng-repeat="(key4, val4) in val3" class="property">
-                    	                            <div ng-if="!isObject(val4) && !isArray(val4)" class="property-simple">
+                                                    <div ng-if="!isObject(val4) && !isArray(val4)"
+                                                         class="property-simple">
                                                         <div ng-if="key4 == 'href'" class="property-link">
-                                                            <strong>{{key4}}:</strong> <a href="#/{{setUrl(val4)}}">{{ val4 }}</a>
+                                                            <strong>{{key4}}:</strong> <a href="#/{{setUrl(val4)}}">{{
+                                                            val4 }}</a>
                                                         </div>
-                        	    	                    <div ng-if="isDateTime(val4)" class="property-datetime">
-                                    						<strong>{{key4}}:</strong> {{ val4.substr(0,10) }} {{ val4.substr(11,8) }}
-                        			     	    	    </div>
-                     	    	                        <div ng-if="key4 != 'href' && !isDateTime(val4)">
-                                				        	<strong>{{key4}}:</strong> {{val4}}
-                         	    	                    </div>
+                                                        <div ng-if="isDateTime(val4)" class="property-datetime">
+                                                            <strong>{{key4}}:</strong> {{ val4.substr(0,10) }} {{
+                                                            val4.substr(11,8) }}
+                                                        </div>
+                                                        <div ng-if="key4 != 'href' && !isDateTime(val4)">
+                                                            <strong>{{key4}}:</strong> {{val4}}
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -122,6 +129,7 @@
 
     <div ng-show="output">
         <h2>Browse the JSON</h2>
+
         <div hljs source="output" language="json" class="output-window"></div>
     </div>
 </div>
