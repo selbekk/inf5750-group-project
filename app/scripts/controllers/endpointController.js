@@ -1,10 +1,10 @@
 'use strict';
 
 app.controller('EndpointController', function ($scope, resourceFactory, $routeParams, headerFactory, $log) {
-    var title = 'Explore: /' + $routeParams.endpoint + ($routeParams.id ? "/" + $routeParams.id : "");
+    var title = 'Explore: /' + $routeParams.endpoint + "/";
     headerFactory.setTitle(title);
 
-    var url = $routeParams.endpoint + ($routeParams.id ? "/" + $routeParams.id : "");
+    var url = $routeParams.endpoint +  "/";
 
     resourceFactory.get(url).then(
         function (payload) {
