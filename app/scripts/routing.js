@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/list.html'
         })
         .when('/:endpoint', {
-            controller: 'SingleController',
+            controller: 'EndpointController',
             templateUrl: 'views/endpoint.html'
         })
         .when('/:endpoint/:id', {
