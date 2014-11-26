@@ -4,7 +4,7 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
     var title = 'Explore: /' + $routeParams.endpoint + '/' + $routeParams.id ;
     headerFactory.setTitle(title);
 
-    var url = $routeParams.endpoint + "/" + $routeParams.id ;
+    var url = $routeParams.endpoint + '/' + $routeParams.id ;
 
     resourceFactory.get(url).then(
         function (payload) {
@@ -34,7 +34,7 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
     };
 
     $scope.setUrl = function (jsonUrl) {
-        return  jsonUrl.substring(jsonUrl.indexOf('/api') + 5, jsonUrl.length);
+        return jsonUrl.substring(jsonUrl.indexOf('/api') + 5, jsonUrl.length);
     };
 
     $scope.jsonify = function (resource) {
@@ -44,34 +44,37 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
     $scope.isDateTime = function (text) {
         // DHIS date & time data type is ISO = YYYY-MM-DDTHH:MM:SS
         var tester = /^[0-9]+$/;
-        if (text.length >= 10 && text.substr(4, 1) == "-" && text.substr(7, 1) == "-")
+        if (text.length >= 10 && text.substr(4, 1) === '-' && text.substr(7, 1) === '-') {
             return  tester.test(text.substr(0, 4)) && tester.test(text.substr(5, 2));
-        else return false;
+        }
+        else {
+            return false;
+        }
     };
 
     $scope.isChart = function (href) {
-        return href && href.search("charts") > -1;
+        return href && href.search('charts') > -1;
     };
 
     $scope.isMap = function (href) {
-        return href && href.search("maps") > -1;
+        return href && href.search('maps') > -1;
     };
 
     $scope.isReport = function (href) {
-        return href && href.search("reports") > -1;
+        return href && href.search('reports') > -1;
     };
 
     $scope.isMapViews = function (href) {
-        return href && href.search("mapViews") > -1;
+        return href && href.search('mapViews') > -1;
     };
 
     $scope.isPreview = function (href) {
         return href && (
-            $scope.isChart(href)
-            || $scope.isMap(href)
-            || $scope.isReport(href)
-            || $scope.isMapViews(href)
-            );
+            $scope.isChart(href) ||
+            $scope.isMap(href) ||
+            $scope.isReport(href) ||
+            $scope.isMapViews(href)
+        );
     };
 
     $scope.togglePreview = function () {
