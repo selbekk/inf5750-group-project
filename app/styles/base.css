@@ -6,6 +6,11 @@ html, body, .api-app {
 body {
     background-color: #FFFFFF;
     color: #33332D;
+    margin-bottom: 20px;
+    margin:0;
+	padding:0;
+	height:100%;
+	min-height: 100%;
 }
 
 a {

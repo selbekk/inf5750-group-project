@@ -14,6 +14,7 @@
     <!-- build:css(.tmp) styles/base.css -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/list.css">
     <link rel="stylesheet" href="styles/endpoint.css">
     <!-- endbuild -->
@@ -24,6 +25,7 @@
 
 <div ng-view class="api-app"></div>
 
+<app-footer></app-footer>
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -53,12 +55,15 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/routing.js"></script>
 <script src="scripts/controllers/headerController.js"></script>
+<script src="scripts/controllers/footerController.js"></script>
 <script src="scripts/controllers/listController.js"></script>
 <script src="scripts/controllers/endpointController.js"></script>
 <script src="scripts/controllers/detailController.js"></script>
 <script src="scripts/factories/resourceFactory.js"></script>
 <script src="scripts/factories/headerFactory.js"></script>
+<script src="scripts/factories/footerFactory.js"></script>
 <script src="scripts/directives/header.js"></script>
+<script src="scripts/directives/footer.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,11 @@
+.app-footer {
+	position: fixed;
+	width: 100%;
+	display: block;
+    background-color: #1b1b1b;
+    color: #ebebeb;
+    text-align: center;
+	vertical-align: middle;;
+	left:0;
+	bottom: 0;
+}
