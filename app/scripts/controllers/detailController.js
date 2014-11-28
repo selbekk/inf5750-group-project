@@ -10,7 +10,7 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
         function (payload) {
                 $scope.resource = angular.fromJson(payload.data);
                 $scope.output = JSON.stringify(payload.data, undefined, 2);
-                $scope.endpointId = $routeParams.endpoint + '/' + $scope.endpoints.displayName;
+                $scope.endpointId = $routeParams.endpoint + '/' + $scope.resource.displayName;
         },
         function (errorPayload) {
             $log.error('failure loading data', errorPayload);

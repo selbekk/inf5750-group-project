@@ -29,7 +29,13 @@
             </div>
         </div>
 
+
         <ul class="properties level-1">
+	    <collection collection="resource"></collection>
+        </ul>
+    </div>
+
+<!-- These codes no longer needed
             <li ng-repeat="(key1, val1) in resource" class="property">
                 <div ng-if="!isObject(val1) && !isArray(val1)" class="property-simple">
                     <div ng-if="key1 == 'href'" class="property-link">
@@ -106,8 +112,7 @@
                     </ul>
                 </div>
             </li>
-        </ul>
-    </div>
+-->
 
     <div ng-show="output">
         <h2>Browse the JSON</h2>
