@@ -1,9 +1,11 @@
 'use strict';
 
 app.controller('EndpointController', function ($scope, resourceFactory, $routeParams, headerFactory, $log) {
+    $scope.$emit('LOAD');
     var title = 'Explore: /' + $routeParams.endpoint;
     headerFactory.setTitle(title);
 
+    
     var url = $routeParams.endpoint;
 
     resourceFactory.get(url).then(
@@ -11,6 +13,7 @@ app.controller('EndpointController', function ($scope, resourceFactory, $routePa
                 $scope.resources = payload.data[$routeParams.endpoint];
                 $scope.output = JSON.stringify(payload.data[$routeParams.endpoint], undefined, 2);
                 $scope.endpointId = $routeParams.endpoint;
+                $scope.$emit('UNLOAD');        
         },
         function (errorPayload) {
             $log.error('failure loading data', errorPayload);

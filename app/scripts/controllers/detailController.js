@@ -1,9 +1,9 @@
 'use strict';
 
 app.controller('DetailController', function ($scope, resourceFactory, $routeParams, headerFactory, $log) {
+    $scope.$emit('LOAD');
     var title = 'Explore: /' + $routeParams.endpoint + '/' + $routeParams.id ;
     headerFactory.setTitle(title);
-
     var url = $routeParams.endpoint + '/' + $routeParams.id ;
 
     resourceFactory.get(url).then(
@@ -11,6 +11,8 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
                 $scope.resource = angular.fromJson(payload.data);
                 $scope.output = JSON.stringify(payload.data, undefined, 2);
                 $scope.endpointId = $routeParams.endpoint + '/' + $scope.endpoints.displayName;
+                $scope.$emit('UNLOAD');  
+                       
         },
         function (errorPayload) {
             $log.error('failure loading data', errorPayload);
@@ -20,7 +22,7 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
 
 
     $scope.previewNoun = 'Show';
-
+    
     $scope.isString = function (text) {
         return angular.isString(text);
     };
@@ -81,5 +83,7 @@ app.controller('DetailController', function ($scope, resourceFactory, $routePara
         $scope.showPreview = !$scope.showPreview;
         $scope.previewNoun = $scope.showPreview ? 'Hide' : 'Show';
     };
+
+    $scope.$emit('UNLOAD'); 
 
 });
