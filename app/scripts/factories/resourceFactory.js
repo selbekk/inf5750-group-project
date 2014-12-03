@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('resourceFactory', function ($http) {
+app.factory('resourceFactory', function ($http, $scope) {
     var factory = {};
 
     // Get all resources from api/resources.json
